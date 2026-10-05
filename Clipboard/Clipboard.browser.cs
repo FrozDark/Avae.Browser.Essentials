@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Essentials;
+﻿using Avalonia.Input.Platform;
+using Microsoft.Maui.Essentials;
 
 namespace Microsoft.Maui.ApplicationModel.DataTransfer
 {
@@ -24,7 +25,7 @@ namespace Microsoft.Maui.ApplicationModel.DataTransfer
             {
                 return Task.FromResult<string?>(null);
             }
-            return clipboard.GetTextAsync()!;
+            return clipboard.TryGetTextAsync();
         }
 
         void StartClipboardListeners()
